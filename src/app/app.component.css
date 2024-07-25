@@ -1,0 +1,21 @@
+.container {
+  /* width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+app-navigation {
+  flex: 1;
+}
+
+.router {
+  flex: 4;
+}

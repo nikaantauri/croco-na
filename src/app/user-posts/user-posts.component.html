@@ -1,0 +1,8 @@
+@for (post of (postTableService.userPosts$ | async); track post) {
+
+<div class="card">
+  <p class="post-body">{{ post.userId }}</p>
+  <h3 class="post-title">{{ post.title }}</h3>
+  <p class="post-body">{{ post.body }}</p>
+</div>
+}

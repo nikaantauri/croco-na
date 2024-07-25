@@ -1,0 +1,21 @@
+<h1>user table</h1>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr class="table-row">
+        <th>მომხმარებლის სახელი</th>
+        <th>პოსტის სათაური</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (post of posts; track post) {
+      <tr class="table-row">
+        <td>{{ post.username }}</td>
+        <td>{{ post.title }}</td>
+      </tr>
+
+      }
+    </tbody>
+  </table>
+</div>
