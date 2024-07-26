@@ -10,3 +10,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --dark-green: #6bba62;
+  --light-green: #9ae17b;
+  --light-grey: #f9f9f9;
+  --light-grey-hover: #fffbfb;
+  --dark-grey: #333;
+  --light-grey-2: #ccc;
+}

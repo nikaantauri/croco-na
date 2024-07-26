@@ -1,20 +1,23 @@
-.container {
+.container-1 {
+  display: flex;
 }
 
 .inner-container {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex: 1;
   justify-content: center;
-  margin: 0 auto;
-  width: 50vw;
-  margin-top: 2rem;
+  width: 100vw;
+  position: absolute;
 }
 
 app-navigation {
-  flex: 1;
+  width: 20%;
+  z-index: 1;
+  padding: 20px;
 }
 
 .router {
-  flex: 9;
+  width: 50%;
+  background-color: #fff;
+  margin-top: 1.5rem;
 }
