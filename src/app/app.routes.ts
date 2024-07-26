@@ -7,4 +7,6 @@ export const routes: Routes = [
   { path: 'users', component: UserTableComponent },
   { path: 'posts', component: PostTableComponent },
   { path: 'users/:userId/posts', component: UserPostsComponent },
+  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '**', redirectTo: '/users' },
 ];

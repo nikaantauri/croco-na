@@ -1,0 +1,19 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+  }
+}

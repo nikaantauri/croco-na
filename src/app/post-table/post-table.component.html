@@ -1,21 +1,33 @@
-<h1>user table</h1>
-
 <div class="table-container">
   <table>
     <thead>
       <tr class="table-row">
         <th>მომხმარებლის სახელი</th>
         <th>პოსტის სათაური</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       @for (post of posts; track post) {
       <tr class="table-row">
         <td>{{ post.username }}</td>
-        <td>{{ post.title }}</td>
+        <td>
+          {{ post.title }}
+        </td>
+        <td>
+          <button class="detail-btn" type="button" (click)="openModal(post)">
+            <span> დეტალურად </span>
+            <i class="bi bi-chevron-compact-right"></i>
+          </button>
+        </td>
       </tr>
 
       }
     </tbody>
   </table>
 </div>
+<app-pop-up
+  [openModal]="isModalOpen"
+  [postData]="postData"
+  (closeModal)="closeModal()"
+></app-pop-up>

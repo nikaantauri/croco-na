@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { userTableService } from '../Services/userTableService.service';
 import { SplitNamePipe } from '../Pipes/splitNamePipe.pipe';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { postTableService } from '../Services/postTableService.service';
 import { Post } from '../interfaces/IPost';
 
@@ -12,19 +12,22 @@ import { Post } from '../interfaces/IPost';
   templateUrl: './user-table.component.html',
   styleUrl: './user-table.component.css',
 })
-export class UserTableComponent {
+export class UserTableComponent implements OnInit {
   constructor(
     public userTableService: userTableService,
-    private postTableService: postTableService
+    private postTableService: postTableService,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.userTableService.getUsers();
   }
 
-  onUserClick(userId: number) {
+  onUserClick(userId: number, userName: string) {
     this.postTableService.getUserPosts(userId).subscribe((posts: Post[]) => {
       this.postTableService.onUserPostSubject(posts);
+      this.postTableService.postsUserName = userName;
+      this.router.navigate(['/users', userId, 'posts']);
     });
   }
 }

@@ -1,8 +1,8 @@
 // src/app/data.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject, forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable, forkJoin } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { Post } from '../interfaces/IPost';
 import { User } from '../interfaces/IUser';
 
@@ -16,8 +16,10 @@ export class postTableService {
 
   constructor(private http: HttpClient) {}
 
-  private userPostSubject = new Subject<Post[]>();
+  private userPostSubject = new BehaviorSubject<Post[]>([]);
   public userPosts$ = this.userPostSubject.asObservable();
+
+  postsUserName: string = '';
 
   onUserPostSubject(data: Post[]) {
     this.userPostSubject.next(data);
@@ -46,6 +48,8 @@ export class postTableService {
   }
 
   getUserPosts(userId: number): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.url}users/${userId}/posts`);
+    return this.http
+      .get<Post[]>(`${this.url}users/${userId}/posts`)
+      .pipe(tap((posts: Post[]) => this.userPostSubject.next(posts)));
   }
 }

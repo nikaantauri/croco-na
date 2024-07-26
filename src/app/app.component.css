@@ -1,15 +1,14 @@
 .container {
-  /* width: 50%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center; */
 }
 
 .inner-container {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50vw;
+  margin-top: 2rem;
 }
 
 app-navigation {
@@ -17,5 +16,5 @@ app-navigation {
 }
 
 .router {
-  flex: 4;
+  flex: 9;
 }
