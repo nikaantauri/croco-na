@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/IUser';
+import { Todo } from '../interfaces/UTodo';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,11 +13,16 @@ export class userTableService {
   url: string = 'https://jsonplaceholder.typicode.com/';
 
   userData: User[] = [];
+  userTodos: Todo[] = [];
   filteredData: User[] = [];
   getUsers() {
-    this.http.get<User[]>(`${this.url}users`).subscribe((response: User[]) => {
-      this.userData = response;
+    this.http.get<User[]>(`${this.url}users`).subscribe((result: User[]) => {
+      this.userData = result;
     });
+  }
+
+  getUserTodos(userId: number): Observable<Todo[]> {
+    return this.http.get<Todo[]>(`${this.url}user/${userId}/todos`);
   }
 
   searchTable(searchValue: string) {

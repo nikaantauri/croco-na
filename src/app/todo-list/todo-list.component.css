@@ -1,0 +1,30 @@
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 55vh;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.completed {
+  background-color: var(--light-green);
+  border: 1px solid var(--dark-green);
+}
+.completed:hover {
+  background-color: var(--dark-green);
+  color: white;
+}
+.not-completed {
+  background-color: var(--light-red);
+  border: 1px solid var(--dark-red);
+}
+.not-completed:hover {
+  background-color: var(--dark-red);
+  color: white;
+}

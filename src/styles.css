@@ -18,7 +18,10 @@ body {
   --dark-green: #6bba62;
   --light-green: #9ae17b;
   --light-grey: #f9f9f9;
+  --light-grey-2: #fff9;
   --light-grey-hover: #fffbfb;
-  --dark-grey: #333;
+  --dark-grey: #001e28;
   --light-grey-2: #ccc;
+  --light-red: #e14848;
+  --dark-red: #b30c0c;
 }

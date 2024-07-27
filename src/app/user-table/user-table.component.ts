@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { postTableService } from '../Services/postTableService.service';
 import { Post } from '../interfaces/IPost';
 import { FormsModule } from '@angular/forms';
+import { Todo } from '../interfaces/UTodo';
 
 @Component({
   selector: 'app-user-table',
@@ -24,11 +25,19 @@ export class UserTableComponent implements OnInit {
     this.userTableService.getUsers();
   }
 
-  onUserClick(userId: number, userName: string) {
+  onPostClick(userId: number, userName: string) {
     this.postTableService.getUserPosts(userId).subscribe((posts: Post[]) => {
       this.postTableService.onUserPostSubject(posts);
-      this.postTableService.postsUserName = userName;
+      this.postTableService.username = userName;
       this.router.navigate(['/users', userId, 'posts']);
+    });
+  }
+
+  onTodoClick(userId: number, userName: string) {
+    this.userTableService.getUserTodos(userId).subscribe((result: Todo[]) => {
+      this.userTableService.userTodos = result;
+      this.postTableService.username = userName;
+      this.router.navigate(['/users', userId, 'todos']);
     });
   }
 

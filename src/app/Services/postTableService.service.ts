@@ -19,7 +19,7 @@ export class postTableService {
   private userPostSubject = new BehaviorSubject<Post[]>([]);
   public userPosts$ = this.userPostSubject.asObservable();
 
-  postsUserName: string = '';
+  username: string = '';
 
   onUserPostSubject(data: Post[]) {
     this.userPostSubject.next(data);

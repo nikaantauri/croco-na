@@ -1,5 +1,7 @@
 <header class="header">
-  <h1 class="header-name">Crocobet - Internship</h1>
+  <button (click)="routeToMain()" type="button">
+    <h1 class="header-name">Crocobet - Internship</h1>
+  </button>
   <span class="header-time">{{
     currentTime$ | async | date : "MMM dd, yyyy hh:mm:ss"
   }}</span>

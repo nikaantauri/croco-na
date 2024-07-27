@@ -1,13 +1,17 @@
 <div class="table-container">
-  <input
-    type="text"
-    class="search-input"
-    placeholder="ძებნა"
-    [(ngModel)]="searchValue"
-    (ngModelChange)="onSearchTable()"
-  />
   <table>
     <thead>
+      <tr>
+        <th colspan="5">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="ძებნა"
+            [(ngModel)]="searchValue"
+            (ngModelChange)="onSearchTable()"
+          />
+        </th>
+      </tr>
       <tr class="table-row">
         <th>სახელი</th>
         <th>გვარი</th>
@@ -18,7 +22,7 @@
     </thead>
 
     @for (user of userTableService.filteredData.length > 0 ?
-    userTableService.filteredData : userTableService.userData; track user) {
+    userTableService.filteredData : userTableService.userData; track user.id) {
     <tr class="table-row">
       <td>{{ (user.name | splitName).firstName }}</td>
       <td>{{ (user.name | splitName).lastName }}</td>
@@ -28,9 +32,14 @@
         <span>
           {{ user.company.name }}
         </span>
-        <button (click)="onUserClick(user.id, user.name)" class="posts-btn">
-          პოსტები <i class="bi bi-chevron-compact-right"></i>
-        </button>
+        <span class="btn-inner-container">
+          <button (click)="onPostClick(user.id, user.name)" class="posts-btn">
+            პოსტები <i class="bi bi-chevron-compact-right"></i>
+          </button>
+          <button (click)="onTodoClick(user.id, user.name)" class="posts-btn">
+            TodoList <i class="bi bi-chevron-compact-right"></i>
+          </button>
+        </span>
       </td>
     </tr>
 
