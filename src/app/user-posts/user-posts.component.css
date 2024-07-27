@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  height: 50vh;
 }
 
 .card {
@@ -9,6 +10,12 @@
   border-radius: 20px;
   padding: 1rem;
   margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+  transition: background-color 0.3s ease;
+}
+.card:hover {
+  background-color: var(--light-grey);
 }
 
 @media screen and (max-width: 1440px) {

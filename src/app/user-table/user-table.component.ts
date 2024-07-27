@@ -4,11 +4,12 @@ import { SplitNamePipe } from '../Pipes/splitNamePipe.pipe';
 import { Router, RouterModule } from '@angular/router';
 import { postTableService } from '../Services/postTableService.service';
 import { Post } from '../interfaces/IPost';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-table',
   standalone: true,
-  imports: [SplitNamePipe, RouterModule],
+  imports: [SplitNamePipe, RouterModule, FormsModule],
   templateUrl: './user-table.component.html',
   styleUrl: './user-table.component.css',
 })
@@ -18,7 +19,7 @@ export class UserTableComponent implements OnInit {
     private postTableService: postTableService,
     private router: Router
   ) {}
-
+  searchValue: string = '';
   ngOnInit() {
     this.userTableService.getUsers();
   }
@@ -29,5 +30,9 @@ export class UserTableComponent implements OnInit {
       this.postTableService.postsUserName = userName;
       this.router.navigate(['/users', userId, 'posts']);
     });
+  }
+
+  onSearchTable() {
+    this.userTableService.searchTable(this.searchValue);
   }
 }

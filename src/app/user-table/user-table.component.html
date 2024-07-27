@@ -1,4 +1,11 @@
 <div class="table-container">
+  <input
+    type="text"
+    class="search-input"
+    placeholder="ძებნა"
+    [(ngModel)]="searchValue"
+    (ngModelChange)="onSearchTable()"
+  />
   <table>
     <thead>
       <tr class="table-row">
@@ -10,7 +17,8 @@
       </tr>
     </thead>
 
-    @for (user of userTableService.userData; track user) {
+    @for (user of userTableService.filteredData.length > 0 ?
+    userTableService.filteredData : userTableService.userData; track user) {
     <tr class="table-row">
       <td>{{ (user.name | splitName).firstName }}</td>
       <td>{{ (user.name | splitName).lastName }}</td>
@@ -20,7 +28,7 @@
         <span>
           {{ user.company.name }}
         </span>
-        <button (click)="onUserClick(user.id, user.username)" class="posts-btn">
+        <button (click)="onUserClick(user.id, user.name)" class="posts-btn">
           პოსტები <i class="bi bi-chevron-compact-right"></i>
         </button>
       </td>

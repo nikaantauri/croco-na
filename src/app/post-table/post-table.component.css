@@ -17,6 +17,7 @@ thead th {
   overflow-y: auto;
   border: 1px solid var(--light-grey-2);
   border-radius: 5px;
+  margin-top: 8%;
 }
 
 table,

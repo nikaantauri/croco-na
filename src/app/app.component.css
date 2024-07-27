@@ -1,5 +1,6 @@
 .container-1 {
   display: flex;
+  position: relative;
 }
 
 .inner-container {
@@ -8,10 +9,10 @@
   justify-content: center;
   width: 100vw;
   position: absolute;
+  align-items: center;
 }
 
 app-navigation {
-  width: 20%;
   z-index: 1;
   padding: 20px;
 }
@@ -19,5 +20,13 @@ app-navigation {
 .router {
   width: 50%;
   background-color: #fff;
-  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  height: 90vh;
+}
+
+@media screen and (max-width: 1024px) {
+  .router {
+    width: 80%;
+  }
 }

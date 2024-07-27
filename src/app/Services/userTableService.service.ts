@@ -11,10 +11,18 @@ export class userTableService {
   url: string = 'https://jsonplaceholder.typicode.com/';
 
   userData: User[] = [];
-
+  filteredData: User[] = [];
   getUsers() {
     this.http.get<User[]>(`${this.url}users`).subscribe((response: User[]) => {
       this.userData = response;
     });
+  }
+
+  searchTable(searchValue: string) {
+    this.filteredData = this.userData.filter(
+      (user) =>
+        user.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchValue.toLowerCase())
+    );
   }
 }

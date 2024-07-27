@@ -1,7 +1,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 thead th {
@@ -17,6 +17,7 @@ thead th {
   overflow-y: auto;
   border: 1px solid var(--light-grey-2);
   border-radius: 5px;
+  margin-top: 8%;
 }
 
 table,
@@ -29,6 +30,8 @@ th,
 td {
   padding: 4px;
   text-align: left;
+  height: 60px;
+  word-break: break-all;
 }
 
 .table-row:nth-child(even) {
@@ -64,4 +67,14 @@ td {
   background-color: var(--light-green);
   border-color: var(--dark-green);
   color: #fff;
+}
+.posts-btn {
+  word-break: normal;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 40px;
+  padding-left: 1rem;
 }
