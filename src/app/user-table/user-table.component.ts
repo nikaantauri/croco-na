@@ -15,12 +15,12 @@ import { Todo } from '../interfaces/UTodo';
   styleUrl: './user-table.component.css',
 })
 export class UserTableComponent implements OnInit {
+  searchValue: string = '';
   constructor(
     public userTableService: userTableService,
     private postTableService: postTableService,
     private router: Router
   ) {}
-  searchValue: string = '';
   ngOnInit() {
     this.userTableService.getUsers();
   }

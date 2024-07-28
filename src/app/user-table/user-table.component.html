@@ -21,7 +21,12 @@
       </tr>
     </thead>
 
-    @for (user of userTableService.filteredData.length > 0 ?
+    @if(userTableService.filteredData.length === 0 && searchValue !== '') {
+    <tr>
+      <td colspan="5">ცხრილი ცარიელია</td>
+    </tr>
+
+    } @else { @for (user of userTableService.filteredData.length > 0 ?
     userTableService.filteredData : userTableService.userData; track user.id) {
     <tr class="table-row">
       <td>{{ (user.name | splitName).firstName }}</td>
@@ -43,6 +48,6 @@
       </td>
     </tr>
 
-    }
+    } }
   </table>
 </div>

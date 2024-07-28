@@ -11,6 +11,7 @@
   gap: 2rem;
   border-radius: 8px;
   padding: 1rem;
+  cursor: pointer;
 }
 .completed {
   background-color: var(--light-green);
@@ -21,10 +22,8 @@
   color: white;
 }
 .not-completed {
-  background-color: var(--light-red);
-  border: 1px solid var(--dark-red);
+  border: 1px solid var(--light-grey-2);
 }
 .not-completed:hover {
-  background-color: var(--dark-red);
-  color: white;
+  background-color: var(--light-grey-hover);
 }

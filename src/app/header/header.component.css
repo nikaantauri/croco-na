@@ -13,10 +13,12 @@
   font-size: 24px;
   cursor: pointer;
   color: white;
+  margin-left: 80px;
 }
 button {
   background-color: transparent;
   border: none;
+  outline: none;
 }
 .header-name:hover {
   color: var(--light-grey-2);
@@ -28,7 +30,13 @@ button {
   }
 }
 @media screen and (max-width: 640px) {
-  .header-name {
+  .header-name,
+  .header-time {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .header-name .header-time {
+    margin-left: 0.8rem;
   }
 }

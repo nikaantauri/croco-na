@@ -1,4 +1,4 @@
-<h3>მომხმარებლის სახელი : {{ postTableService.username }}</h3>
+<h5 class="username">მომხმარებლის სახელი : {{ postTableService.username }}</h5>
 <div class="card-container">
   @for (post of (postTableService.userPosts$ | async); track post) {
   <div class="card">

@@ -17,10 +17,18 @@
 .card:hover {
   background-color: var(--light-grey);
 }
+.username {
+  text-align: center;
+}
 
 @media screen and (max-width: 1440px) {
   .card-container {
     grid-template-columns: repeat(1, 1fr);
     gap: 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .post-title {
+    font-size: 24px;
   }
 }

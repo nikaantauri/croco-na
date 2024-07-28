@@ -78,6 +78,7 @@ td {
   height: 40px;
   padding-left: 1rem;
   box-sizing: border-box;
+  border-radius: 5px;
 }
 .btn-inner-container {
   display: flex;
@@ -88,5 +89,10 @@ td {
 @media screen and (max-width: 1024px) {
   .table-container {
     width: 80vw;
+  }
+}
+@media screen and (max-width: 540px) {
+  .table-container {
+    margin-left: 0.8rem;
   }
 }

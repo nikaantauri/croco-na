@@ -1,11 +1,16 @@
 .navigation {
-  border-right: 1px solid var(--light-grey-2);
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
+  padding: 4rem 1rem 1rem 1rem;
   height: 100vh;
   background-color: var(--dark-grey);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
 }
 .nav-btn {
   border: none;
@@ -35,7 +40,7 @@
 
 @media screen and (max-width: 1024px) {
   .navigation {
-    padding: 0.5rem;
+    padding: 4rem 0.5rem 0.5rem 0.5rem;
   }
 }
 
@@ -44,15 +49,14 @@
     font-size: 16px;
   }
   .navigation {
-    padding: 0.5rem 0.2rem;
+    padding: 4rem 0.2rem;
   }
 }
 @media screen and (max-width: 640px) {
-  .nav-btn,
-  span {
+  .nav-btn span {
     font-size: 12px;
   }
   .navigation {
-    padding: 0.5rem 0rem;
+    padding: 4rem 0rem;
   }
 }
