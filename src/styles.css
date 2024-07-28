@@ -39,3 +39,9 @@ body {
   background-color: var(--dark-grey);
   border-radius: 5px;
 }
+app-user-table {
+  height: inherit;
+  margin-top: 12rem;
+  display: flex;
+  align-items: flex-start;
+}

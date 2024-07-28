@@ -15,6 +15,7 @@ export class userTableService {
   userData: User[] = [];
   userTodos: Todo[] = [];
   filteredData: User[] = [];
+
   getUsers() {
     this.http.get<User[]>(`${this.url}users`).subscribe((result: User[]) => {
       this.userData = result;
