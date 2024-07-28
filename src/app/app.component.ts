@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { PostTableComponent } from './post-table/post-table.component';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { PostTableComponent } from './post-table/post-table.component';
     NavigationComponent,
     UserTableComponent,
     PostTableComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

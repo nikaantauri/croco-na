@@ -25,3 +25,17 @@ body {
   --light-red: #e14848;
   --dark-red: #b30c0c;
 }
+
+*::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px var(--dark-grey);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--dark-grey);
+  border-radius: 5px;
+}

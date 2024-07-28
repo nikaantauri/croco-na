@@ -10,6 +10,7 @@
   width: 100vw;
   position: absolute;
   align-items: center;
+  overflow: auto;
 }
 
 app-navigation {
@@ -28,5 +29,10 @@ app-navigation {
 @media screen and (max-width: 1024px) {
   .router {
     width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .router {
+    margin-left: 1.5rem;
   }
 }
