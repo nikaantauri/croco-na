@@ -22,6 +22,7 @@ export class UserTableComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit() {
+    this.searchValue = this.userTableService.saveSearchValue;
     this.userTableService.getUsers();
   }
 

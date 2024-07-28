@@ -16,6 +16,8 @@ export class userTableService {
   userTodos: Todo[] = [];
   filteredData: User[] = [];
 
+  saveSearchValue: string = '';
+
   getUsers() {
     this.http.get<User[]>(`${this.url}users`).subscribe((result: User[]) => {
       this.userData = result;
@@ -27,6 +29,7 @@ export class userTableService {
   }
 
   searchTable(searchValue: string) {
+    this.saveSearchValue = searchValue;
     this.filteredData = this.userData.filter(
       (user) =>
         user.name.toLowerCase().includes(searchValue.toLowerCase()) ||
