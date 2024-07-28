@@ -40,8 +40,7 @@ body {
   border-radius: 5px;
 }
 app-user-table {
-  height: inherit;
-  margin-top: 12rem;
+  height: 70vh;
   display: flex;
   align-items: flex-start;
 }
